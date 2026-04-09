@@ -1,19 +1,31 @@
-import { api } from '../services/api'
+import { createClient } from '@supabase/supabase-js';
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 export const getPosts = async () => {
-    const {data} = await api.get('/posts'); 
+  let { data: posts, error } = await supabase
+    .from('posts')
+    .select('*')
+    .order('created_at', { ascending: false });
 
-    if(data){
-        return data;
-    }
+  if (error) {
+    console.error('Erro ao buscar posts:', error);
+    return [];
+  }
 
-    return []
-}
+  return posts;
+};
 
-export const getPostBySlug = async (id) => {
+export const getPostById = async (id) => {
+  let { data: post, error } = await supabase
+    .from('posts')
+    .select('*')
+    .eq('id', id)
+    .single();
 
-    //TODO: BUSCAR UM POST EM ESPECIFICO.
-    //const {data} = await api.get(`/post?id=eq.${id}`)
+  if (error) {
+    console.error('Erro ao buscar post:', error);
+    return null;
+  }
 
-    return {}
-}
+  return post;
+};
