@@ -50,13 +50,13 @@ module.exports = {
         secondary: 'var(--font-secondary)',
       },
       theme: {
-        bejamas: {
+        marie: {
           colors: {
-            primary: '#FF8585',
-            'gradient-1': '#7d7aff',
-            'gradient-2': '#2121E2',
-            'gradient-3': '#FF76B8',
-            'gradient-4': '#001AFF',
+            primary: '#FF85BA',
+            'gradient-1': '#FFF5F8',
+            'gradient-2': '#FFB7D5',
+            'gradient-3': '#FF85BA',
+            'gradient-4': '#D4145A',
           },
         },
       },

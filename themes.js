@@ -44,6 +44,15 @@ exports.COLOR_THEMES = {
       'gradient-4': '#FFCC81',
     },
   },
+  marie: {
+    colors: {
+      primary: '#FF85BA',
+      'gradient-1': '#FFF5F8',
+      'gradient-2': '#FFB7D5',
+      'gradient-3': '#FF85BA',
+      'gradient-4': '#D4145A',
+    },
+  },
 };
 
 exports.FONT_THEMES = {
